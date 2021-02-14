@@ -1,0 +1,227 @@
+package com.skywriter.core.web.rest;
+
+import com.skywriter.core.domain.Broadcast;
+import com.skywriter.core.domain.Inbox;
+import com.skywriter.core.repository.BroadcastRepository;
+import com.skywriter.core.repository.InboxRepository;
+import com.skywriter.core.service.ExcelWrite;
+import com.skywriter.core.service.GenerateXlsService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.Produces;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/generate-xls")
+public class ExportXlsController {
+
+
+    public static final Logger LOG = LoggerFactory.getLogger(ExportXlsController.class);
+
+    @Autowired
+    private InboxRepository inboxRepository;
+
+    @Autowired
+    private ServletContext context;
+
+    @Autowired
+    private GenerateXlsService generateXlsService;
+
+    @Autowired
+    private ExcelWrite excelWrite;
+
+    @Autowired
+    private BroadcastRepository broadcastRepository;
+
+//    @GetMapping
+//    public ResponseEntity<?> createXls(HttpServletRequest request, HttpServletResponse response) throws IOException {
+////      boolean isFlag = generateXlsService.createXls(inboxes ,context ,request , response );
+//        boolean isFlag = excelWrite.createXls();
+//        if (isFlag) {
+//            System.out.println("--------> is Flag " + isFlag);
+////            String fullPath = request.getServletContext().getRealPath("/resources/reports/"+"exportAll"+".xls");
+//            String fullPath = request.getServletContext().getRealPath("exportAll"+".xls");
+//            try {
+//                fileDownload("exportAll.xls", response, "exportAll.xls");
+//                return new ResponseEntity<>(isFlag , HttpStatus.OK);
+//            }catch (Exception e){
+//                e.printStackTrace();
+//                return new ResponseEntity<>(e.getMessage() , HttpStatus.BAD_REQUEST);
+//            }
+//        }else {
+//            return new ResponseEntity<>( "false" , HttpStatus.BAD_REQUEST);
+//        }
+//    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> exportRow(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Broadcast broadcast = broadcastRepository.findById(id);
+        boolean isFlag = excelWrite.exportRow(id , broadcast.getTitle());
+        if (isFlag) {
+            try {
+                fileDownload(id+"-"+broadcast.getTitle() + ".xls", response, id+"-"+broadcast.getTitle() + ".xls");
+                return new ResponseEntity<>(isFlag , HttpStatus.OK);
+            }catch (Exception e){
+                e.printStackTrace();
+                return new ResponseEntity<>(e.getMessage() , HttpStatus.BAD_REQUEST);
+            }
+        }else {
+            return new ResponseEntity<>( "false" , HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @GetMapping("/social/{id}")
+    public ResponseEntity<?> socialExportRow(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Broadcast broadcast = broadcastRepository.findById(id);
+        boolean isFlag = excelWrite.socialExportRow(id , broadcast.getTitle() , broadcast.getDomain());
+        if (isFlag) {
+            try {
+                fileDownload(id+"-"+broadcast.getTitle() + ".xls", response, id+"-"+broadcast.getTitle() + ".xls");
+                return new ResponseEntity<>(isFlag , HttpStatus.OK);
+            }catch (Exception e){
+                e.printStackTrace();
+                return new ResponseEntity<>(e.getMessage() , HttpStatus.BAD_REQUEST);
+            }
+        }else {
+            return new ResponseEntity<>( "false" , HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @PostMapping("/social")
+    public ResponseEntity<?> exportAllSocial(@RequestBody List<Broadcast> broadcasts) throws IOException {
+        List<Broadcast> sendBroacast = new ArrayList<>();
+        broadcasts.stream().forEach(broadcast -> {
+            sendBroacast.add(broadcastRepository.findById(broadcast.getId()));
+
+        });
+        if (broadcasts != null) {
+            this.excelWrite.saveSocialData(sendBroacast);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PostMapping
+    public ResponseEntity<?> exportAll(@RequestBody List<Broadcast> broadcasts) throws IOException {
+        if (broadcasts != null) {
+            this.excelWrite.saveData(broadcasts);
+//            boolean isFlag = excelWrite.exportAll(broadcasts);
+//            if (isFlag){
+//                try {
+//                    fileDownload("MyOutreach.xls" , response , "MyOutreach.xls");
+//                }catch (Exception e){
+//                    e.printStackTrace();
+//                    return new ResponseEntity<>(e.getMessage() , HttpStatus.BAD_REQUEST);
+//                }
+//            }else {
+//                return new ResponseEntity<>( "false" , HttpStatus.BAD_REQUEST);
+//            }
+            return new ResponseEntity<>(HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping
+    public ResponseEntity<?> exportAll(HttpServletResponse response) throws IOException {
+        List<Broadcast> broadcasts = this.excelWrite.retrieveData();
+        if (broadcasts != null) {
+            boolean isFlag = excelWrite.exportAll(broadcasts);
+            if (isFlag){
+                try {
+                    fileDownload("MyOutreach.xls" , response , "MyOutreach.xls");
+                }catch (Exception e){
+                    e.printStackTrace();
+                    return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+                }
+            }else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/social")
+    public ResponseEntity<?> exportAllSocial(HttpServletResponse response) throws IOException {
+        List<Broadcast> broadcasts = this.excelWrite.retrieveSocialData();
+
+        if (broadcasts != null) {
+            boolean isFlag = excelWrite.exportAllSocial(broadcasts);
+            if (isFlag){
+                try {
+                    fileDownload("Social-MyOutreach.xls" , response , "Social-MyOutreach.xls");
+                }catch (Exception e){
+                    e.printStackTrace();
+                    return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+                }
+            }else {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+//        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+//    @GetMapping
+//    public ResponseEntity<InputStreamResource> downloadFile() {
+//
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.add("Content-Disposition", "attachment; filename=exportAll.xls");
+//
+//        return ResponseEntity
+//            .ok()
+//            .headers(headers)
+//            .body(new InputStreamResource(excelWrite.loadFile()));
+//    }
+
+    private void fileDownload(String filePath, HttpServletResponse response, String fileName){
+        File file = new File(filePath);
+        final int BUFFER_SIZE = 1024 * 8;
+        if (file.exists()) {
+            try {
+                FileInputStream inputStream = new FileInputStream(file);
+                String mimeType = context.getMimeType(filePath);
+                response.setContentType(mimeType);
+//                response.setHeader("content-disposition", "attashment; filename"+fileName);
+                response.setHeader("Content-Disposition", "attachment;filename=" + file.getName() );
+                response.setHeader("charset", "iso-8859-1");
+                response.setContentType("application/octet-stream");
+                response.setStatus(HttpServletResponse.SC_OK);
+
+                OutputStream outputStream = response.getOutputStream();
+                byte[] buffer = new byte[BUFFER_SIZE];
+                int bytesRead = -1;
+                while ((bytesRead = inputStream.read(buffer)) != -1){
+                    outputStream.write(buffer,0,bytesRead);
+                }
+                System.out.println(outputStream.toString());
+                inputStream.close();
+                outputStream.close();
+                response.flushBuffer();
+                file.delete();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
+
+}

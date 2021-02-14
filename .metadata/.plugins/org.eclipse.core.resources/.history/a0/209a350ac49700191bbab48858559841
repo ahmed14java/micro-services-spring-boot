@@ -1,0 +1,72 @@
+package com.photoappuser.controller;
+
+import com.photoappuser.amazon.AmazonSES;
+import com.photoappuser.dto.UserDto;
+import com.photoappuser.jwt.JwtProvider;
+import com.photoappuser.payload.request.LoginPayload;
+import com.photoappuser.payload.request.SignupPayload;
+import com.photoappuser.payload.response.JwtResponse;
+import com.photoappuser.payload.response.ResponseMessage;
+import com.photoappuser.services.UserService;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+
+@RestController
+@RequestMapping("/users")
+public class UserController {
+
+    @Autowired
+    private Environment env;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private JwtProvider jwtProvider;
+
+    @GetMapping("/status-check")
+    public String status(){
+        return "working on port " + env.getProperty("local.server.port");
+    }
+
+    @PostMapping("/signup")
+    public ResponseEntity<?> signup(@Valid @RequestBody SignupPayload signupPayload){
+        ModelMapper modelMapper = new ModelMapper();
+        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+        UserDto userDto =  modelMapper.map(signupPayload , UserDto.class);
+        UserDto returned = userService.createUser(userDto);
+//        try {
+//            new AmazonSES().verifyEmail(returned);
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+        return new ResponseEntity<>(
+                new ResponseMessage("User Registered Successfully! please check your email and verify it to be able to login"), HttpStatus.OK);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<JwtResponse> signin(@RequestBody LoginPayload loginPayload){
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(loginPayload.getUsername() , loginPayload.getPassword())
+        );
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        String token = jwtProvider.generateToken(authentication);
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        return ResponseEntity.ok(new JwtResponse(token , userDetails.getUsername() , userDetails.getAuthorities()));
+    }
+}

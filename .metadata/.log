@@ -1,0 +1,1120 @@
+!SESSION 2019-06-26 04:45:30.759 -----------------------------------------------
+eclipse.buildId=3.9.0.201707061823-RELEASE-e47
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -data /home/ahmed/ahmed/microservices -os linux -ws gtk -arch x86_64 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2019-06-26 04:45:44.785
+!MESSAGE Server ‘com.genuitec.eclipse.aeri.server1’ failed with exception: Bad Gateway. ; version: 2.0.5.v20170613-1207
+!STACK 0
+org.apache.http.client.HttpResponseException: Bad Gateway
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseHandler.handleResponse(HttpResponses.java:66)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:1)
+	at org.apache.http.client.fluent.Response.handleResponse(Response.java:90)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses.getContentWithProgress(HttpResponses.java:51)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:65)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.ui 2 2 2019-06-26 04:45:46.577
+!MESSAGE org.eclipse.jdt.junit.ResultView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.ui 2 2 2019-06-26 04:45:46.578
+!MESSAGE org.springframework.ide.eclipse.aop.ui.navigator.aopReferenceModelNavigator: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.ui 2 2 2019-06-26 04:45:46.578
+!MESSAGE org.eclipse.contribution.xref.ui.views.XReferenceView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-26 04:45:48.218
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-26 04:45:48.219
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2019-06-26 04:46:20.700
+!MESSAGE No repository found at file:/home/gs/workdir/utils/spring-tool-suite/sts-bundle/sts-3.9.0.RELEASE/.eclipseextension.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2019-06-26 04:46:27.644
+!MESSAGE No repository found at file:/home/gs/workdir/utils/spring-tool-suite/spring-tool-suite-3.9.0/sts/.eclipseextension.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2019-06-26 04:46:55.452
+!MESSAGE No repository found at file:/home/gs/workdir/utils/spring-tool-suite/spring-tool-suite-3.9.0/sts/configuration/org.eclipse.osgi/261/data/listener_1925729951/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2019-06-26 04:47:05.320
+!MESSAGE No repository found at file:/home/gs/workdir/utils/spring-tool-suite/sts-bundle/sts-3.9.0.RELEASE/configuration/org.eclipse.osgi/261/data/listener_1925729951/.
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 04:58:43.695
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 04:58:43.771
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 04:59:36.132
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 04:59:36.182
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 04:59:57.334
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 04:59:57.335
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 05:00:14.053
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 05:00:14.053
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 05:00:32.429
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 05:00:32.429
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.springframework.ide.eclipse.beans.core 4 2 2019-06-26 05:00:40.376
+!MESSAGE Problems occurred when invoking code from plug-in: "org.springframework.ide.eclipse.beans.core".
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.security.config.annotation.method.configuration.GlobalMethodSecuritySelector.selectImports(GlobalMethodSecuritySelector.java:45)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:517)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:286)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:237)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:279)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:237)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:204)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:173)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.springframework.ide.eclipse.beans.core 2 0 2019-06-26 05:00:40.377
+!MESSAGE Error occured while running bean post processors
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.security.config.annotation.method.configuration.GlobalMethodSecuritySelector.selectImports(GlobalMethodSecuritySelector.java:45)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:517)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:286)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:237)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:279)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:237)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:204)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:173)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.springframework.ide.eclipse.beans.core 4 2 2019-06-26 06:06:50.441
+!MESSAGE Problems occurred when invoking code from plug-in: "org.springframework.ide.eclipse.beans.core".
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAttributes(AutoConfigurationImportSelector.java:148)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:115)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.selectImports(AutoConfigurationImportSelector.java:98)
+	at org.springframework.context.annotation.ConfigurationClassParser.processDeferredImportSelectors(ConfigurationClassParser.java:480)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:191)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.springframework.ide.eclipse.beans.core 2 0 2019-06-26 06:06:50.447
+!MESSAGE Error occured while running bean post processors
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAttributes(AutoConfigurationImportSelector.java:148)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:115)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.selectImports(AutoConfigurationImportSelector.java:98)
+	at org.springframework.context.annotation.ConfigurationClassParser.processDeferredImportSelectors(ConfigurationClassParser.java:480)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:191)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+!SESSION 2019-06-26 13:47:46.975 -----------------------------------------------
+eclipse.buildId=3.9.0.201707061823-RELEASE-e47
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-06-26 13:47:55.496
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-26 13:48:04.021
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2019-06-26 13:48:04.027
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2019-06-26 13:48:15.180
+!MESSAGE Server ‘com.genuitec.eclipse.aeri.server1’ failed with exception: Bad Gateway. ; version: 2.0.5.v20170613-1207
+!STACK 0
+org.apache.http.client.HttpResponseException: Bad Gateway
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseHandler.handleResponse(HttpResponses.java:66)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses$ProgressMonitorResponseStringHandler.handleResponse(HttpResponses.java:1)
+	at org.apache.http.client.fluent.Response.handleResponse(Response.java:90)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.HttpResponses.getContentWithProgress(HttpResponses.java:51)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:65)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:16.559
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:16.685
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:17.254
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:17.790
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:17.890
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:20.410
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:20.486
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:22.202
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:22.242
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:28.474
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:28.474
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:34.359
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:34.359
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:34.796
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:34.846
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:35.268
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:35.268
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:36.558
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:36.559
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:36.906
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:36.907
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.springframework.ide.eclipse.beans.core 4 2 2019-06-26 13:48:37.760
+!MESSAGE Problems occurred when invoking code from plug-in: "org.springframework.ide.eclipse.beans.core".
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAttributes(AutoConfigurationImportSelector.java:155)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:118)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.selectImports(AutoConfigurationImportSelector.java:100)
+	at org.springframework.context.annotation.ConfigurationClassParser.processDeferredImportSelectors(ConfigurationClassParser.java:480)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:191)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.springframework.ide.eclipse.beans.core 2 0 2019-06-26 13:48:37.818
+!MESSAGE Error occured while running bean post processors
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAttributes(AutoConfigurationImportSelector.java:155)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:118)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.selectImports(AutoConfigurationImportSelector.java:100)
+	at org.springframework.context.annotation.ConfigurationClassParser.processDeferredImportSelectors(ConfigurationClassParser.java:480)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:191)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:39.220
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:39.221
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.springframework.ide.eclipse.beans.core 4 2 2019-06-26 13:48:40.839
+!MESSAGE Problems occurred when invoking code from plug-in: "org.springframework.ide.eclipse.beans.core".
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAttributes(AutoConfigurationImportSelector.java:155)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:118)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.selectImports(AutoConfigurationImportSelector.java:100)
+	at org.springframework.context.annotation.ConfigurationClassParser.processDeferredImportSelectors(ConfigurationClassParser.java:480)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:191)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.springframework.ide.eclipse.beans.core 2 0 2019-06-26 13:48:40.842
+!MESSAGE Error occured while running bean post processors
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAttributes(AutoConfigurationImportSelector.java:155)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:118)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.selectImports(AutoConfigurationImportSelector.java:100)
+	at org.springframework.context.annotation.ConfigurationClassParser.processDeferredImportSelectors(ConfigurationClassParser.java:480)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:191)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:41.528
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:41.577
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:41.621
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:41.670
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.springframework.ide.eclipse.beans.core 4 2 2019-06-26 13:48:43.175
+!MESSAGE Problems occurred when invoking code from plug-in: "org.springframework.ide.eclipse.beans.core".
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAttributes(AutoConfigurationImportSelector.java:148)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:115)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.selectImports(AutoConfigurationImportSelector.java:98)
+	at org.springframework.context.annotation.ConfigurationClassParser.processDeferredImportSelectors(ConfigurationClassParser.java:480)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:191)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.springframework.ide.eclipse.beans.core 2 0 2019-06-26 13:48:43.178
+!MESSAGE Error occured while running bean post processors
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAttributes(AutoConfigurationImportSelector.java:148)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:115)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.selectImports(AutoConfigurationImportSelector.java:98)
+	at org.springframework.context.annotation.ConfigurationClassParser.processDeferredImportSelectors(ConfigurationClassParser.java:480)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:191)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:44.018
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:44.018
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:44.430
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:44.431
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:44.747
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:44.748
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:45.039
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:45.039
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:45.218
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:45.268
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:46.729
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:46.730
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:49.379
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:49.379
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.springframework.ide.eclipse.beans.core 4 2 2019-06-26 13:48:49.569
+!MESSAGE Problems occurred when invoking code from plug-in: "org.springframework.ide.eclipse.beans.core".
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.security.config.annotation.method.configuration.GlobalMethodSecuritySelector.selectImports(GlobalMethodSecuritySelector.java:45)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:517)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:286)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:237)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:279)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:237)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:204)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:173)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.springframework.ide.eclipse.beans.core 2 0 2019-06-26 13:48:49.574
+!MESSAGE Error occured while running bean post processors
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.security.config.annotation.method.configuration.GlobalMethodSecuritySelector.selectImports(GlobalMethodSecuritySelector.java:45)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:517)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:286)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:237)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:279)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:237)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:204)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:173)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:49.651
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:49.699
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:50.004
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:50.054
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:50.320
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:50.370
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:50.757
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:50.757
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:50.827
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:50.827
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.springframework.ide.eclipse.beans.core 4 2 2019-06-26 13:48:53.054
+!MESSAGE Problems occurred when invoking code from plug-in: "org.springframework.ide.eclipse.beans.core".
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAttributes(AutoConfigurationImportSelector.java:155)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:118)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.selectImports(AutoConfigurationImportSelector.java:100)
+	at org.springframework.context.annotation.ConfigurationClassParser.processDeferredImportSelectors(ConfigurationClassParser.java:480)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:191)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.springframework.ide.eclipse.beans.core 2 0 2019-06-26 13:48:53.058
+!MESSAGE Error occured while running bean post processors
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAttributes(AutoConfigurationImportSelector.java:155)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.getAutoConfigurationEntry(AutoConfigurationImportSelector.java:118)
+	at org.springframework.boot.autoconfigure.AutoConfigurationImportSelector.selectImports(AutoConfigurationImportSelector.java:100)
+	at org.springframework.context.annotation.ConfigurationClassParser.processDeferredImportSelectors(ConfigurationClassParser.java:480)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:191)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:53.208
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:53.209
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:53.688
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:53.714
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:53.898
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:53.947
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:54.130
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:54.179
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:54.429
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:48:54.465
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2019-06-26 13:48:58.045
+!MESSAGE No repository found at file:/home/gs/workdir/utils/spring-tool-suite/sts-bundle/sts-3.9.0.RELEASE/.eclipseextension.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2019-06-26 13:49:08.156
+!MESSAGE No repository found at file:/home/gs/workdir/utils/spring-tool-suite/spring-tool-suite-3.9.0/sts/.eclipseextension.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2019-06-26 13:49:39.344
+!MESSAGE No repository found at file:/home/gs/workdir/utils/spring-tool-suite/spring-tool-suite-3.9.0/sts/configuration/org.eclipse.osgi/261/data/listener_1925729951/.
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2019-06-26 13:49:51.845
+!MESSAGE No repository found at file:/home/gs/workdir/utils/spring-tool-suite/sts-bundle/sts-3.9.0.RELEASE/configuration/org.eclipse.osgi/261/data/listener_1925729951/.
+
+!ENTRY org.eclipse.egit.core 4 0 2019-06-26 13:50:13.298
+!MESSAGE Connecting Git team provider failed. See log for details.
+!SUBENTRY 1 org.eclipse.egit.core 4 0 2019-06-26 13:50:13.298
+!MESSAGE Error connecting project skywriter-core, no Git repositories found
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:50:40.914
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:51:34.690
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 13:51:34.828
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2019-06-26 14:45:50.241
+!MESSAGE Full project indexing required:
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/asm/asm/3.1/c157def142714c544bdea2e6144645702adf7097/asm-3.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/c3p0/c3p0/0.9.1.1/302704f30c6e7abb7a0457f7771739e03c973e80/c3p0-0.9.1.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-java-sdk-core/1.11.228/9ec309be7f6717c29c4bb714c85b5b77dca3c2f8/aws-java-sdk-core-1.11.228.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-java-sdk-kms/1.11.228/e4111bee8770dbce10af13d142a15fc1a558d3dc/aws-java-sdk-kms-1.11.228.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-java-sdk-s3/1.11.228/67636504d63f604d286ae15311cab7aee36671bd/aws-java-sdk-s3-1.11.228.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.amazonaws/jmespath-java/1.11.228/d38365313411af3631d6ed470b6ec6c645a42d09/jmespath-java-1.11.228.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.dataformat/jackson-dataformat-cbor/2.8.10/1c58cc9313ddf19f0900cd61ed044874278ce320/jackson-dataformat-cbor-2.8.10.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.dataformat/jackson-dataformat-smile/2.8.10/e853081fadaad3e98ed801937acc3d8f77580686/jackson-dataformat-smile-2.8.10.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/2.8.10/1e08caf1d787c825307d8cc6362452086020d853/jackson-dataformat-yaml-2.8.10.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-hibernate5/2.8.10/ac1fb6b90b157777b8f9843eef0fd22770f2af3c/jackson-datatype-hibernate5-2.8.10.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-hppc/2.8.10/8e8e8c8b5e32bab3be7e10221b502ebbe7ca8090/jackson-datatype-hppc-2.8.10.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-json-org/2.8.10/730adb31e0f5d720dd980a0c96e7d7c06e87f04e/jackson-datatype-json-org-2.8.10.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.8.10/c7e69a2619d22f067e96ac1fec95b4157604167f/jackson-datatype-jsr310-2.8.10.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.2/3edcfe49d2c6053a70a2a47e4e1c2f94998a49cf/gson-2.8.2.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/3.0/9d84f15fe35e2c716a02979fb62f50a29f38aefa/guice-3.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.h2database/h2/1.4.196/dd0034398d593aa3588c6773faac429bbd9aea0e/h2-1.4.196.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.hazelcast/hazelcast-hibernate52/1.2.2/1324e8c79955115e78d931230bdc22fd3d09f8a8/hazelcast-hibernate52-1.2.2.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.hazelcast/hazelcast-spring/3.9.1/434f4e8c933fc5a527a23e3bd6d304117d3eb1f1/hazelcast-spring-3.9.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.hazelcast/hazelcast/3.9.1/9a44d132121144b28500a56ae482c81ebba86bb7/hazelcast-3.9.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.mashape.unirest/unirest-java/1.4.9/778cffcba803dc7d43932266aef4c91f5b6b4dd0/unirest-java-1.4.9.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.netflix.spectator/spectator-api/0.30.0/52479cbc402c206b1910c7f4612c0eec097fddc2/spectator-api-0.30.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.netflix.spectator/spectator-reg-servo/0.30.0/7fb99ca4b4753137b19371371b646ec7bff9596/spectator-reg-servo-0.30.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.ning/compress-lzf/1.0.2/62896e6fca184c79cc01a14d143f3ae2b4f4b4ae/compress-lzf-1.0.2.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.spatial4j/spatial4j/0.5/6e16edaf6b1ba76db7f08c2f3723fce3b358ecc3/spatial4j-0.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.sun.mail/javax.mail/1.5.6/ab5daef2f881c42c8e280cbe918ec4d7fdfd7efe/javax.mail-1.5.6.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.tdunning/t-digest/3.0/84ccf145ac2215e6bfa63baa3101c0af41017cfc/t-digest-3.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.twitter/jsr166e/1.1.0/233098147123ee5ddcd39ffc57ff648be4b7e5b2/jsr166e-1.1.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/com.zaxxer/HikariCP/2.7.4/c101cbc2d07c0adffa0857e742229ef785892699/HikariCP-2.7.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/commons-cli/commons-cli/1.3.1/1303efbc4b181e5a58bf2e967dc156a3132b97c0/commons-cli-1.3.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/info.cukes/cucumber-core/1.2.5/7255a9d8e0c3b0f9e3cd80503c91c2b088b3d9b5/cucumber-core-1.2.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/info.cukes/cucumber-html/0.2.3/624a0c986088e32910336dd77aee5191c04a8201/cucumber-html-0.2.3.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/info.cukes/cucumber-java/1.2.5/2197dfa9cd7899ddce136a356994ac21f438f80/cucumber-java-1.2.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/info.cukes/cucumber-junit/1.2.5/7cedd85f2e6b4f2fa1091c921f509275c60e7500/cucumber-junit-1.2.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/info.cukes/cucumber-jvm-deps/1.0.5/69ed0efe4b81f05da3c0bdc7281cbdc43f5ceb26/cucumber-jvm-deps-1.0.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/info.cukes/cucumber-spring/1.2.5/2b96b04759ce9719d20ea74aab59e06e6db5274b/cucumber-spring-1.2.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/info.cukes/gherkin/2.12.2/17138631fa20fd0e44a13e50d6b7be59cee1a94/gherkin-2.12.2.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-annotation/3.2.5/60d1eab779c4f7c3241ec1f2d8358fc462b53fe5/metrics-annotation-3.2.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-core/3.2.5/ea2316646e9787c5b2d14ca97f4ef7ad5c6b94e9/metrics-core-3.2.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-healthchecks/3.2.5/14ab3434d95f3a58abcb8ac1685cd0f29de64110/metrics-healthchecks-3.2.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-json/3.2.5/b94a5ebe6ab930a0d3ae92c3b5515f505a447a92/metrics-json-3.2.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-jvm/3.2.5/bdcff42c5cbeee390a702f0abea7e5cade710aef/metrics-jvm-3.2.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-servlet/3.2.5/23627d6d56e72445e598ab1f65d37530a9498abb/metrics-servlet-3.2.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-servlets/3.2.5/da0efd223b6d88b480d6120f0afadc14a85fb698/metrics-servlets-3.2.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.github.jhipster/jhipster/1.3.0/6059defd97a52e587068c9f821b81603709aef2e/jhipster-1.3.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.github.openfeign/feign-core/9.5.0/7b89da81b21d8cdd4f5b4c79b730dbc11427bb14/feign-core-9.5.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.github.openfeign/feign-hystrix/9.5.0/1a715fb47635793c5302fcdd3f880ed6ec2816fd/feign-hystrix-9.5.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.github.openfeign/feign-slf4j/9.5.0/bd87fd711ac41e952c63e25a1d68df5b4cc1e0a3/feign-slf4j-9.5.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.logz.logback/logzio-logback-appender/v1.0.21/892a85cbe4c209941c0ef37a299b629ff758497a/logzio-logback-appender-v1.0.21.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.logz.sender/logzio-sender/1.0.18/606c90ffa1aca62b4f9d8da7e6cd349ec52b0d5c/logzio-sender-1.0.18.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.netty/netty/3.10.6.Final/18ed04a0e502896552854926e908509db2987a00/netty-3.10.6.Final.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-bean-validators/2.8.0/e976e3abef6b1332a53c6ede381054f25ff2207d/springfox-bean-validators-2.8.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-core/2.8.0/5f0fbaa34cc01dfca7089000c4943629d7e1c9dc/springfox-core-2.8.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-schema/2.8.0/70ed8275e2277bffe269c8dbd688f54464bf1222/springfox-schema-2.8.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spi/2.8.0/efe49b45357dd9f6c27799a5f7f5ba1ce6bdc05f/springfox-spi-2.8.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-spring-web/2.8.0/cb2ce464b07919158dde1ad40f72cca9c364559b/springfox-spring-web-2.8.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-swagger-common/2.8.0/e0fc6a0096eb8d40fac7cc8206ddbb2fe73051d2/springfox-swagger-common-2.8.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-swagger2/2.8.0/27fbca30912258ce0e31cd56361f732f6c27d5ff/springfox-swagger2-2.8.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-annotations/1.5.14/989c19cd0a90768885532318ca5fd7ea16290cc8/swagger-annotations-1.5.14.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.swagger/swagger-models/1.5.14/581d784b65e82cee5bf3e91d193d3f9c0c702453/swagger-models-1.5.14.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.undertow/undertow-core/1.4.22.Final/1d696c86c9500f83aeb4e102ecc81b791f79b4f0/undertow-core-1.4.22.Final.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.undertow/undertow-servlet/1.4.22.Final/7a21eff778c28f6ee83cde37e265d194d012d930/undertow-servlet-1.4.22.Final.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/io.undertow/undertow-websockets-jsr/1.4.22.Final/4a9c2b94797f1feccf6d40597efb533e4bd2dad8/undertow-websockets-jsr-1.4.22.Final.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1.1/485de3a253e23f645037828c07f1d7f1af40763a/activation-1.1.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/javax.cache/cache-api/1.0.0/2b57384801243f387f1a2e7ab8066ac79c2a91d3/cache-api-1.0.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy/1.7.9/51218a01a882c04d0aba8c028179cce488bbcb58/byte-buddy-1.7.9.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/4.2.2/5012450aee579c3118ff09461d5ce210e0cdc2a9/jna-4.2.2.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/net.jpountz.lz4/lz4/1.3.0/c708bb2590c0652a642236ef45d9f99ff842a2ce/lz4-1.3.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/net.logstash.logback/logstash-logback-encoder/4.11/163b6b046de5414ac17c83cbd6cb619e541fc69a/logstash-logback-encoder-4.11.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/net.sargue/mailgun/1.5.0/3477a694b66e1c13444b268fbf9bfa33bf3fd48d/mailgun-1.5.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.geronimo.bundles/json/20090211_1/dd3e57b26450cd682f5991c537ab44ba1fbbdb54/json-20090211_1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpasyncclient/4.1.3/34c56f43fd3255fc239ffe33d0fbfb8195be6a24/httpasyncclient-4.1.3.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient/4.5.5/1603dfd56ebcd583ccdf337b6c3984ac55d89e58/httpclient-4.5.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore-nio/4.4.6/4bafcb5aacb1abc193698a13ae99394e09a25101/httpcore-nio-4.4.6.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.9/a86ce739e5a7175b4b234c290a00a5fdb80957a0/httpcore-4.4.9.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.5/8281b24b8a493374cd2aa8a90c4156588f7dbcb6/httpmime-4.5.5.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.kafka/kafka-clients/0.10.1.1/52f03b809c26f9676ddfcf130f13c80dfc929b98/kafka-clients-0.10.1.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-analyzers-common/5.5.4/8ce9d34c8124c80e176e8332ee947480bbb9576/lucene-analyzers-common-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-backward-codecs/5.5.4/a933f42e758c54c43083398127ea7342b54d8212/lucene-backward-codecs-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-core/5.5.4/ab9c77e75cf142aa6e284b310c8395617bd9b19b/lucene-core-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-grouping/5.5.4/986b71b1639b13ed91a18a97a99362dc5419449/lucene-grouping-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-highlighter/5.5.4/433f53f03f1b14337c08d54e507a5410905376fa/lucene-highlighter-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-join/5.5.4/23f9a909a244ed3b28b37c5bb21a6e33e6c0a339/lucene-join-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-memory/5.5.4/4dbdc2e1a24837722294762a9edb479f79092ab9/lucene-memory-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-misc/5.5.4/a74388857f73614e528ae44d742c60187cb55a5a/lucene-misc-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-queries/5.5.4/f915357b8b4b43742ab48f1401dedcaa12dfa37a/lucene-queries-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-queryparser/5.5.4/8a06fad4675473d98d93b61fea529e3f464bf69e/lucene-queryparser-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-sandbox/5.5.4/49498bbb2adc333e98bdca4bf6170ae770cbad11/lucene-sandbox-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-spatial/5.5.4/217d302dc0ef4d9b8b475ffe327d83c1e0ceba5/lucene-spatial-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-spatial3d/5.5.4/e7f070127b5d29500b866fe742fbbe74c701e87/lucene-spatial3d-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.lucene/lucene-suggest/5.5.4/f46dbb3229eed62dff10d008172c885e0e028c8/lucene-suggest-5.5.4.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml-schemas/3.9/4c514498f0e82cccfdd3208b9caff2f45158db4a/poi-ooxml-schemas-3.9.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/3.9/bbe83c739d22eecfacd06d7e0b99ba13277040ed/poi-ooxml-3.9.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi/3.9/5d5e41354e88322e4bc590b31f3d2d1d52b3e6ac/poi-3.9.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-jdbc/8.5.27/f37dfae9e9afb6b2742e04a401e32264c5fec0ec/tomcat-jdbc-8.5.27.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-juli/8.5.27/583a08f2f59c6abdd86833b572b9a2f55e61a0f2/tomcat-juli-8.5.27.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.apache.xmlbeans/xmlbeans/2.6.0/29e80d2dd51f9dcdef8f9ffaee0d4dc1c9bbfc87/xmlbeans-2.6.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.assertj/assertj-core/3.8.0/b209d90ff2e279bee3e02547ee7b11349c52d0e3/assertj-core-3.8.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.codehaus.jettison/jettison/1.2/765a6181653f4b05c18c7a9e8f5c1f8269bf9b2/jettison-1.2.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.elasticsearch/elasticsearch/2.4.6/d2954e1173a608a9711f132d1768a676a8b1fb81/elasticsearch-2.4.6.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.elasticsearch/securesm/1.0/c0c6cf986ba0057390bfcc80c366a0e3157f944b/securesm-1.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.facebook4j/facebook4j-core/2.4.11/c21b2f919e9d617af8367eef8c20cc91209ae78a/facebook4j-core-2.4.11.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/aopalliance-repackaged/2.5.0-b32/6af37c3f8ec6f9e9653ec837eb508da28ce443cd/aopalliance-repackaged-2.5.0-b32.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/javax.inject/2.5.0-b32/b2fa50c8186a38728c35fe6a9da57ce4cc806923/javax.inject-2.5.0-b32.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-api/2.5.0-b32/6a576c9653832ce610b80a2f389374ef19d96171/hk2-api-2.5.0-b32.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-locator/2.5.0-b32/195474f8ad0a8d130e9ea949a771bcf1215fc33b/hk2-locator-2.5.0-b32.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-utils/2.5.0-b32/5108a926988c4ceda7f1e681dddfe3101454a002/hk2-utils-2.5.0-b32.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.bundles.repackaged/jersey-guava/2.25.1/a2bb4f8208e134cf2cf71dfb8824e42942f7bd06/jersey-guava-2.25.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.25.1/4d563b1f93352ee9fad597e9e1daf2c6159993c6/jersey-client-2.25.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.25.1/2438ce68d4907046095ab54aa83a6092951b4bbb/jersey-common-2.25.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-multipart/2.25.1/1d2db0078ee1b740c4e7ec7413d328a8a7e1c480/jersey-media-multipart-2.25.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-core/5.2.12.Final/ea479b6692e22c9b642dd4142db670e92d106544/hibernate-core-5.2.12.Final.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-entitymanager/5.2.12.Final/718a7546a500ed9dc153001e6fc512e8d8038971/hibernate-entitymanager-5.2.12.Final.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-envers/5.2.12.Final/983f02f1535ba64831aee6df4214bf47668d50dd/hibernate-envers-5.2.12.Final.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-validator/5.3.6.Final/4c730be8bf55a8e9a61e79a2f2c079abf48b718/hibernate-validator-5.3.6.Final.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.jboss.spec.javax.annotation/jboss-annotations-api_1.2_spec/1.0.0.Final/6d7ff02a645227876ed550900d32d618b8f0d556/jboss-annotations-api_1.2_spec-1.0.0.Final.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.jboss.spec.javax.websocket/jboss-websocket-api_1.1_spec/1.1.0.Final/a89cc6c8f15c06aed6fe81482e168248ad7c76d3/jboss-websocket-api_1.1_spec-1.1.0.Final.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.json/json/20140107/d1ffca6e2482b002702c6a576166fd685e3370e3/json-20140107.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.jvnet.mimepull/mimepull/1.9.6/41c913d791e16f93bc712a8c8a30bb64daa2e9bd/mimepull-1.9.6.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.jvnet/animal-sniffer-annotation/1.0/67da8e0d8a8ef79c461a489f9f7bb3e86e23ccae/animal-sniffer-annotation-1.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.liquibase/liquibase-core/3.5.3/f346404c3876c5bd0e07a7e10b7565bdcd35dbab/liquibase-core-3.5.3.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.objenesis/objenesis/2.5.1/272bab9a4e5994757044d1fc43ce480c8cb907a4/objenesis-2.5.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.postgresql/postgresql/9.4.1212.jre7/7101612950488be0ff6882bcc27aa0f0a4c202dd/postgresql-9.4.1212.jre7.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.quartz-scheduler/quartz-jobs/2.2.1/b86d51a88bc8ea66b130a93d877a2ae9c6e47c1b/quartz-jobs-2.2.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.quartz-scheduler/quartz/2.2.1/2bd17ec0c66d0370a932e225f52c23f3dc7cc4ce/quartz-2.2.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.reflections/reflections/0.9.11/23bba0ff497ec61fbca967d9b641c7681a71edb3/reflections-0.9.11.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.sonatype.sisu.inject/cglib/2.2.1-v20090111/7ce5e983fd0e6c78346f4c9cbfa39d83049dda2/cglib-2.2.1-v20090111.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator/1.5.10.RELEASE/6cd22e2348aec18a19bedf86b5fb6d932d3f8c18/spring-boot-actuator-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/1.5.10.RELEASE/be96efab0d35181f18c486b0ec8d6a41a7042fce/spring-boot-autoconfigure-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-devtools/1.3.0.RELEASE/1086d11e1005ab701e6994667c2592ecfc90c602/spring-boot-devtools-1.3.0.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-loader-tools/1.5.10.RELEASE/1defe7e7f9d7f6d03aa7f93d21cfd20e67e4a0f6/spring-boot-loader-tools-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-actuator/1.5.10.RELEASE/64cfc9842b6b608b132ff258934db9045733f678/spring-boot-starter-actuator-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-aop/1.5.10.RELEASE/2e58fd451d9e89a539a2c15efc5089d81dd7a686/spring-boot-starter-aop-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-cache/1.5.10.RELEASE/9306f602fdd1680565fa149397d2941b496c5b62/spring-boot-starter-cache-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-elasticsearch/1.5.10.RELEASE/c1f801a108a66453a7084aee2465e98c4fa9a14e/spring-boot-starter-data-elasticsearch-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-jpa/1.5.10.RELEASE/ca30f9060231d3161d325580098d326754a2f4e1/spring-boot-starter-data-jpa-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-jdbc/1.5.10.RELEASE/f78396b57f70a0ca8422bcbe8959aa49baf49023/spring-boot-starter-jdbc-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/1.5.10.RELEASE/62c73688208b3173645d6701fc3eb95ca657e6c8/spring-boot-starter-logging-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-mail/1.5.10.RELEASE/965dfd50458b9820097096267a61e751b5d8a966/spring-boot-starter-mail-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-security/1.5.10.RELEASE/92fd7261c5cd66b95854bb7d90c131b19e394412/spring-boot-starter-security-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/1.5.10.RELEASE/d4e1be51061d71b55f4bd4458d8437d1b943a70/spring-boot-starter-test-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-thymeleaf/1.5.10.RELEASE/39df06f0bc15bf022ddf3cc9a0d1cf5dc47f023a/spring-boot-starter-thymeleaf-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-undertow/1.5.10.RELEASE/c647e28c93c20152cf49c9dc77d48f6d3686b4c9/spring-boot-starter-undertow-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/1.5.10.RELEASE/8bc445f3ee81e5322e46b28cbb33bca1800b69d9/spring-boot-starter-web-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/1.5.10.RELEASE/d935ac98f84c1d97d7ccd702d21abdc236fa7aa0/spring-boot-starter-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-test-autoconfigure/1.5.10.RELEASE/55242f7c194fb141de8460a92e92b716469fc3a8/spring-boot-test-autoconfigure-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-test/1.5.10.RELEASE/b7f28e8896906f0bbbb951727a7c5581c562d1c9/spring-boot-test-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/1.5.10.RELEASE/594b3efa04829f62754a19f59f81ba204636167a/spring-boot-1.5.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-commons/1.2.4.RELEASE/d3b5ca7d53415c7a28d539c211577e9983e6d6cb/spring-cloud-commons-1.2.4.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-config-client/1.3.3.RELEASE/c0f2132b54904f2e0f2732d17eda10b11f1c1a15/spring-cloud-config-client-1.3.3.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-context/1.2.4.RELEASE/60d7e955ed26f1d37c48fbbd42884f348f34e593/spring-cloud-context-1.2.4.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-core/1.2.5.RELEASE/6f29575f12beb1c754622be550ea9181374b7717/spring-cloud-core-1.2.5.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-netflix-core/1.3.5.RELEASE/2f573a8b99146dd733b34480b5e11b3c34944e70/spring-cloud-netflix-core-1.3.5.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-netflix-eureka-client/1.3.5.RELEASE/2494e6bd9c7a23c1d1df85c36eb980e483a7bef7/spring-cloud-netflix-eureka-client-1.3.5.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-netflix-spectator/1.3.5.RELEASE/f25170dfc408fca62b73dd940c8921a2d2813cb7/spring-cloud-netflix-spectator-1.3.5.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-security/1.2.1.RELEASE/3baa2af6654f03c22dec168d39590af7c0ef2dbe/spring-cloud-security-1.2.1.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-spring-service-connector/1.2.5.RELEASE/f057bc0baaf192d4782075afd983fea3e806c7dd/spring-cloud-spring-service-connector-1.2.5.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-archaius/1.3.5.RELEASE/944357583c3c38b5b316c18919e844fe2ff66a17/spring-cloud-starter-archaius-1.3.5.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-config/1.3.3.RELEASE/cd8e073cce859b2f748cd04083756de7825ce4c/spring-cloud-starter-config-1.3.3.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-eureka/1.3.5.RELEASE/b316903152a7bf2b9e32117026c59a2c786d877c/spring-cloud-starter-eureka-1.3.5.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-feign/1.3.5.RELEASE/f09ffc581a85fe020edef940a36b0a9127fdd8b9/spring-cloud-starter-feign-1.3.5.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-hystrix/1.3.5.RELEASE/3854bdbcc4c5b068c2f6527933aefd4818d3622e/spring-cloud-starter-hystrix-1.3.5.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-ribbon/1.3.5.RELEASE/42b1fbe8f07b3f7c464b0b7a667e3177e22f4da4/spring-cloud-starter-ribbon-1.3.5.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-spectator/1.3.5.RELEASE/380a09e1d87e14a4f901d710b3983cfccc29f4f0/spring-cloud-starter-spectator-1.3.5.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter/1.2.4.RELEASE/8dedf04851bf6bc85bf3b09813ccf7775568b22b/spring-cloud-starter-1.2.4.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/1.13.10.RELEASE/b732245a0902b561b0c33e54cd0f382e9ac444ed/spring-data-commons-1.13.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-elasticsearch/2.1.10.RELEASE/b4a3d48aaa508b7a6a12ef1ff93d0b57c877dee9/spring-data-elasticsearch-2.1.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jpa/1.11.10.RELEASE/82ec646adc5d33b7b1d8f52e90c0ea030f0888ca/spring-data-jpa-1.11.10.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.kafka/spring-kafka/1.1.7.RELEASE/bf48801adc57f32f4acb84f3605848a78065a491/spring-kafka-1.1.7.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.security.oauth/spring-security-oauth2/2.0.14.RELEASE/2359228d52ed5307beb8491764bc751ce60064cb/spring-security-oauth2-2.0.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-config/4.2.4.RELEASE/309ce9b5bb4b1aee06e67517dabfd568b59678cf/spring-security-config-4.2.4.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/4.2.4.RELEASE/ce6b196526d5029a349897cd0b583dcf93af144/spring-security-core-4.2.4.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-crypto/4.2.4.RELEASE/31e79840d213f13b2bb28bda0d65fe54a78766c8/spring-security-crypto-4.2.4.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-data/4.2.4.RELEASE/d27722650b1de4d3226ce7a309fbf8032add90bd/spring-security-data-4.2.4.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-test/4.2.4.RELEASE/8ad59a5bb29d391387077cf38c029dce974194db/spring-security-test-4.2.4.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-web/4.2.4.RELEASE/939ba20911e1c12b288dde665ba1d4d6925a85e4/spring-security-web-4.2.4.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.3.14.RELEASE/dfe55b0592aead8e3eb0e6a4e98db433b9e09bd7/spring-aop-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aspects/4.3.14.RELEASE/e2d10895e7142dd4c5e979407fe4539146429618/spring-aspects-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.3.14.RELEASE/7bcd17a68dd64e9447d7bff2c42ba7417678596e/spring-beans-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/4.3.14.RELEASE/c4f5f32bf8665bd05ee6b3b3f31bdb43fcb597ee/spring-context-support-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.3.14.RELEASE/e50a712960926c30e537ef4a633f5d9dd5a8b155/spring-context-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.14.RELEASE/c70ddb6204457a802d1f6882d65bca3e5b3c41df/spring-core-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.3.14.RELEASE/58477b44debcb49b09e962e3047ee74c2c033e89/spring-expression-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/4.3.14.RELEASE/1b1b9045d9ec1e067d99bf158210e9e7cf2ebfd2/spring-jdbc-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-messaging/4.3.14.RELEASE/6d291e0857d55edba091a9ab2dbfb8346e2ac05d/spring-messaging-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/4.3.14.RELEASE/721bc451d02070954ebee039d419b410c4697fcb/spring-orm-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/4.3.14.RELEASE/1a7f6f51a263a3e09e94403653348b3864412c53/spring-test-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/4.3.14.RELEASE/1c9449fcb805837db3c706eab4c729f89688a267/spring-tx-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.3.14.RELEASE/a0c3bf3ad661db185675bd5af350f35ed11f0903/spring-web-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.3.14.RELEASE/1571eab8a807005d424ca16fedd54b1f439787b2/spring-webmvc-4.3.14.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.thymeleaf/thymeleaf-spring4/2.1.6.RELEASE/a18784dab5e9337a53ce3213b205f927217849f2/thymeleaf-spring4-2.1.6.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.thymeleaf/thymeleaf/2.1.6.RELEASE/c362b4ecbeddc86a0cb7e767a88ce27e9c8147e6/thymeleaf-2.1.6.RELEASE.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.twitter4j/twitter4j-core/4.0.6/f3722af4568b96ee66739267e13211b8b66ac7d4/twitter4j-core-4.0.6.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.twitter4j/twitter4j-stream/4.0.6/d631a279e4747bdc7c87ec7698184a390bb8d859/twitter4j-stream-4.0.6.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.xerial.snappy/snappy-java/1.1.2.6/48d92871ca286a47f230feb375f0bbffa83b85f6/snappy-java-1.1.2.6.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.zalando/faux-pas/0.5.0/440684298a840ea897ee80c1d1b7268e7f15fdd8/faux-pas-0.5.0.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.zalando/jackson-datatype-problem/0.20.1/c0dbe38bc4ec68e345b363608bf9c9cc262e8729/jackson-datatype-problem-0.20.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.zalando/problem-spring-web/0.22.1/15c7b89525fd3f810ab276ca7af216d2d98fecf4/problem-spring-web-0.22.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/org.zalando/problem/0.20.1/d2e73dbecc1c6d01d92ee87517eaed9691556cd4/problem-0.20.1.jar
+  [+] /home/ahmed/.gradle/caches/modules-2/files-2.1/xml-apis/xml-apis/1.4.01/3789d9fada2d3d458c4ba2de349d48780f381ee3/xml-apis-1.4.01.jar
+  [+] /home/ahmed/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar
+  [+] /home/ahmed/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar
+  [+] /home/ahmed/.m2/repository/ch/qos/logback/logback-classic/1.1.11/logback-classic-1.1.11.jar
+  [+] /home/ahmed/.m2/repository/ch/qos/logback/logback-core/1.1.11/logback-core-1.1.11.jar
+  [+] /home/ahmed/.m2/repository/com/carrotsearch/hppc/0.7.1/hppc-0.7.1.jar
+  [+] /home/ahmed/.m2/repository/com/fasterxml/classmate/1.3.4/classmate-1.3.4.jar
+  [+] /home/ahmed/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.jar
+  [+] /home/ahmed/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.8.10/jackson-core-2.8.10.jar
+  [+] /home/ahmed/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.8.10/jackson-databind-2.8.10.jar
+  [+] /home/ahmed/.m2/repository/com/fasterxml/jackson/module/jackson-module-afterburner/2.8.10/jackson-module-afterburner-2.8.10.jar
+  [+] /home/ahmed/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar
+  [+] /home/ahmed/.m2/repository/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.jar
+  [+] /home/ahmed/.m2/repository/com/google/gag/gag/1.0.1/gag-1.0.1.jar
+  [+] /home/ahmed/.m2/repository/com/google/guava/guava/23.5-jre/guava-23.5-jre.jar
+  [+] /home/ahmed/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar
+  [+] /home/ahmed/.m2/repository/com/jayway/jsonpath/json-path/2.2.0/json-path-2.2.0.jar
+  [+] /home/ahmed/.m2/repository/com/mattbertolini/liquibase-slf4j/2.0.0/liquibase-slf4j-2.0.0.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/archaius/archaius-core/0.7.4/archaius-core-0.7.4.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/eureka/eureka-client/1.6.2/eureka-client-1.6.2.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/eureka/eureka-core/1.6.2/eureka-core-1.6.2.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/hystrix/hystrix-core/1.5.12/hystrix-core-1.5.12.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/hystrix/hystrix-javanica/1.5.12/hystrix-javanica-1.5.12.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/hystrix/hystrix-metrics-event-stream/1.5.12/hystrix-metrics-event-stream-1.5.12.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/hystrix/hystrix-serialization/1.5.12/hystrix-serialization-1.5.12.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/netflix-commons/netflix-commons-util/0.1.1/netflix-commons-util-0.1.1.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/netflix-commons/netflix-eventbus/0.3.0/netflix-eventbus-0.3.0.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/netflix-commons/netflix-infix/0.3.0/netflix-infix-0.3.0.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/netflix-commons/netflix-statistics/0.1.1/netflix-statistics-0.1.1.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/ribbon/ribbon-core/2.2.2/ribbon-core-2.2.2.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/ribbon/ribbon-eureka/2.2.2/ribbon-eureka-2.2.2.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/ribbon/ribbon-httpclient/2.2.2/ribbon-httpclient-2.2.2.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/ribbon/ribbon-loadbalancer/2.2.2/ribbon-loadbalancer-2.2.2.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/ribbon/ribbon-transport/2.2.2/ribbon-transport-2.2.2.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/ribbon/ribbon/2.2.2/ribbon-2.2.2.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/servo/servo-core/0.10.1/servo-core-0.10.1.jar
+  [+] /home/ahmed/.m2/repository/com/netflix/servo/servo-internal/0.10.1/servo-internal-0.10.1.jar
+  [+] /home/ahmed/.m2/repository/com/papertrail/profiler/1.0.2/profiler-1.0.2.jar
+  [+] /home/ahmed/.m2/repository/com/ryantenney/metrics/metrics-spring/3.1.3/metrics-spring-3.1.3.jar
+  [+] /home/ahmed/.m2/repository/com/sun/jersey/contribs/jersey-apache-client4/1.19.1/jersey-apache-client4-1.19.1.jar
+  [+] /home/ahmed/.m2/repository/com/sun/jersey/jersey-client/1.19.1/jersey-client-1.19.1.jar
+  [+] /home/ahmed/.m2/repository/com/sun/jersey/jersey-core/1.19.1/jersey-core-1.19.1.jar
+  [+] /home/ahmed/.m2/repository/com/thoughtworks/xstream/xstream/1.4.10/xstream-1.4.10.jar
+  [+] /home/ahmed/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar
+  [+] /home/ahmed/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar
+  [+] /home/ahmed/.m2/repository/commons-configuration/commons-configuration/1.8/commons-configuration-1.8.jar
+  [+] /home/ahmed/.m2/repository/commons-io/commons-io/2.5/commons-io-2.5.jar
+  [+] /home/ahmed/.m2/repository/commons-jxpath/commons-jxpath/1.3/commons-jxpath-1.3.jar
+  [+] /home/ahmed/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+  [+] /home/ahmed/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
+  [+] /home/ahmed/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar
+  [+] /home/ahmed/.m2/repository/io/netty/netty-buffer/4.0.27.Final/netty-buffer-4.0.27.Final.jar
+  [+] /home/ahmed/.m2/repository/io/netty/netty-codec-http/4.0.27.Final/netty-codec-http-4.0.27.Final.jar
+  [+] /home/ahmed/.m2/repository/io/netty/netty-codec/4.0.27.Final/netty-codec-4.0.27.Final.jar
+  [+] /home/ahmed/.m2/repository/io/netty/netty-common/4.0.27.Final/netty-common-4.0.27.Final.jar
+  [+] /home/ahmed/.m2/repository/io/netty/netty-handler/4.0.27.Final/netty-handler-4.0.27.Final.jar
+  [+] /home/ahmed/.m2/repository/io/netty/netty-transport/4.0.27.Final/netty-transport-4.0.27.Final.jar
+  [+] /home/ahmed/.m2/repository/io/reactivex/rxjava/1.1.10/rxjava-1.1.10.jar
+  [+] /home/ahmed/.m2/repository/io/reactivex/rxnetty-contexts/0.4.9/rxnetty-contexts-0.4.9.jar
+  [+] /home/ahmed/.m2/repository/io/reactivex/rxnetty-servo/0.4.9/rxnetty-servo-0.4.9.jar
+  [+] /home/ahmed/.m2/repository/io/reactivex/rxnetty/0.4.9/rxnetty-0.4.9.jar
+  [+] /home/ahmed/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar
+  [+] /home/ahmed/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar
+  [+] /home/ahmed/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar
+  [+] /home/ahmed/.m2/repository/javax/transaction/javax.transaction-api/1.2/javax.transaction-api-1.2.jar
+  [+] /home/ahmed/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar
+  [+] /home/ahmed/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
+  [+] /home/ahmed/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar
+  [+] /home/ahmed/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar
+  [+] /home/ahmed/.m2/repository/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar
+  [+] /home/ahmed/.m2/repository/joda-time/joda-time/2.9.9/joda-time-2.9.9.jar
+  [+] /home/ahmed/.m2/repository/junit/junit/4.12/junit-4.12.jar
+  [+] /home/ahmed/.m2/repository/net/minidev/accessors-smart/1.1/accessors-smart-1.1.jar
+  [+] /home/ahmed/.m2/repository/net/minidev/json-smart/2.2.1/json-smart-2.2.1.jar
+  [+] /home/ahmed/.m2/repository/ognl/ognl/3.0.8/ognl-3.0.8.jar
+  [+] /home/ahmed/.m2/repository/org/antlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar
+  [+] /home/ahmed/.m2/repository/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.jar
+  [+] /home/ahmed/.m2/repository/org/apache/commons/commons-math/2.2/commons-math-2.2.jar
+  [+] /home/ahmed/.m2/repository/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13.jar
+  [+] /home/ahmed/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.56/bcpkix-jdk15on-1.56.jar
+  [+] /home/ahmed/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.56/bcprov-jdk15on-1.56.jar
+  [+] /home/ahmed/.m2/repository/org/checkerframework/checker-qual/2.0.0/checker-qual-2.0.0.jar
+  [+] /home/ahmed/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar
+  [+] /home/ahmed/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar
+  [+] /home/ahmed/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar
+  [+] /home/ahmed/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar
+  [+] /home/ahmed/.m2/repository/org/codehaus/woodstox/woodstox-core-asl/4.4.1/woodstox-core-asl-4.4.1.jar
+  [+] /home/ahmed/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar
+  [+] /home/ahmed/.m2/repository/org/glassfish/javax.el/3.0.0/javax.el-3.0.0.jar
+  [+] /home/ahmed/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+  [+] /home/ahmed/.m2/repository/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3.jar
+  [+] /home/ahmed/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.9/HdrHistogram-2.1.9.jar
+  [+] /home/ahmed/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.0.1.Final/hibernate-commons-annotations-5.0.1.Final.jar
+  [+] /home/ahmed/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar
+  [+] /home/ahmed/.m2/repository/org/javassist/javassist/3.21.0-GA/javassist-3.21.0-GA.jar
+  [+] /home/ahmed/.m2/repository/org/jboss/jandex/2.0.3.Final/jandex-2.0.3.Final.jar
+  [+] /home/ahmed/.m2/repository/org/jboss/logging/jboss-logging/3.3.1.Final/jboss-logging-3.3.1.Final.jar
+  [+] /home/ahmed/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.1.Final/jboss-transaction-api_1.2_spec-1.0.1.Final.jar
+  [+] /home/ahmed/.m2/repository/org/jboss/xnio/xnio-api/3.3.8.Final/xnio-api-3.3.8.Final.jar
+  [+] /home/ahmed/.m2/repository/org/jboss/xnio/xnio-nio/3.3.8.Final/xnio-nio-3.3.8.Final.jar
+  [+] /home/ahmed/.m2/repository/org/mapstruct/mapstruct-jdk8/1.2.0.Final/mapstruct-jdk8-1.2.0.Final.jar
+  [+] /home/ahmed/.m2/repository/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.jar
+  [+] /home/ahmed/.m2/repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar
+  [+] /home/ahmed/.m2/repository/org/skyscreamer/jsonassert/1.4.0/jsonassert-1.4.0.jar
+  [+] /home/ahmed/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.25/jcl-over-slf4j-1.7.25.jar
+  [+] /home/ahmed/.m2/repository/org/slf4j/jul-to-slf4j/1.7.25/jul-to-slf4j-1.7.25.jar
+  [+] /home/ahmed/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.25/log4j-over-slf4j-1.7.25.jar
+  [+] /home/ahmed/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar
+  [+] /home/ahmed/.m2/repository/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar
+  [+] /home/ahmed/.m2/repository/org/springframework/plugin/spring-plugin-metadata/1.2.0.RELEASE/spring-plugin-metadata-1.2.0.RELEASE.jar
+  [+] /home/ahmed/.m2/repository/org/springframework/retry/spring-retry/1.2.2.RELEASE/spring-retry-1.2.2.RELEASE.jar
+  [+] /home/ahmed/.m2/repository/org/springframework/security/spring-security-jwt/1.0.9.RELEASE/spring-security-jwt-1.0.9.RELEASE.jar
+  [+] /home/ahmed/.m2/repository/org/springframework/security/spring-security-rsa/1.0.3.RELEASE/spring-security-rsa-1.0.3.RELEASE.jar
+  [+] /home/ahmed/.m2/repository/org/unbescape/unbescape/1.1.0.RELEASE/unbescape-1.1.0.RELEASE.jar
+  [+] /home/ahmed/.m2/repository/org/yaml/snakeyaml/1.17/snakeyaml-1.17.jar
+  [+] /home/ahmed/.m2/repository/software/amazon/ion/ion-java/1.0.2/ion-java-1.0.2.jar
+  [+] /home/ahmed/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar
+  [+] /home/ahmed/.m2/repository/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.jar
+  [+] /home/ahmed/.m2/repository/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/java-atk-wrapper.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar
+  [+] /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:169)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 15:58:11.087
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 15:58:11.095
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.egit.ui 4 0 2019-06-26 19:54:35.465
+!MESSAGE Invalid remote: origin
+!STACK 0
+org.eclipse.jgit.api.errors.InvalidRemoteException: Invalid remote: origin
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:241)
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:288)
+	at org.eclipse.egit.core.op.PullOperation$1.run(PullOperation.java:200)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.egit.core.op.PullOperation.execute(PullOperation.java:232)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI.execute(PullOperationUI.java:176)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI.access$0(PullOperationUI.java:168)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI$1.runInWorkspace(PullOperationUI.java:141)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.eclipse.jgit.errors.NoRemoteRepositoryException: https://github.com/skywriter-systems/skywriter-core.git: https://github.com/skywriter-systems/skywriter-core.git/info/refs?service=git-upload-pack not found
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:518)
+	at org.eclipse.jgit.transport.TransportHttp.openFetch(TransportHttp.java:326)
+	at org.eclipse.jgit.transport.FetchProcess.executeImp(FetchProcess.java:136)
+	at org.eclipse.jgit.transport.FetchProcess.execute(FetchProcess.java:122)
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1236)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:234)
+	... 10 more
+
+!ENTRY org.eclipse.egit.core 4 0 2019-06-26 20:02:43.851
+!MESSAGE Connecting Git team provider failed. See log for details.
+!SUBENTRY 1 org.eclipse.egit.core 4 0 2019-06-26 20:02:43.851
+!MESSAGE Error connecting project skywriter-composer, no Git repositories found
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 20:03:00.596
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 20:03:00.639
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 20:03:54.174
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.eclipse.lsp4e 1 0 2019-06-26 20:03:54.175
+!MESSAGE Non IFiles not supported yet
+
+!ENTRY org.springframework.ide.eclipse.beans.core 4 2 2019-06-26 22:30:14.060
+!MESSAGE Problems occurred when invoking code from plug-in: "org.springframework.ide.eclipse.beans.core".
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.security.config.annotation.method.configuration.GlobalMethodSecuritySelector.selectImports(GlobalMethodSecuritySelector.java:45)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:517)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:286)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:237)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:279)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:237)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:204)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:173)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.springframework.ide.eclipse.beans.core 2 0 2019-06-26 22:30:14.062
+!MESSAGE Error occured while running bean post processors
+!STACK 0
+java.lang.NoSuchMethodError: org.springframework.util.Assert.notNull(Ljava/lang/Object;Ljava/util/function/Supplier;)V
+	at org.springframework.security.config.annotation.method.configuration.GlobalMethodSecuritySelector.selectImports(GlobalMethodSecuritySelector.java:45)
+	at org.springframework.context.annotation.ConfigurationClassParser.processImports(ConfigurationClassParser.java:517)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:286)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:237)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:279)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:237)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:204)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:173)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:321)
+	at org.springframework.ide.eclipse.metadata.process.JdtConfigurationClassPostProcessor.postProcess(JdtConfigurationClassPostProcessor.java:88)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$3.run(BeansJavaConfig.java:332)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.executePostProcessor(BeansJavaConfig.java:321)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig.access$5(BeansJavaConfig.java:319)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:233)
+	at org.springframework.ide.eclipse.beans.core.internal.model.BeansJavaConfig$2.call(BeansJavaConfig.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)

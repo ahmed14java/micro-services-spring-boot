@@ -1,0 +1,4 @@
+GitRepositoriesView.GitDirectories=/home/ahmed/Skywriter-git/skywriter-core/.git\:/home/ahmed/Skywriter-git/skywriter-composer/.git\:
+GitRepositoriesView.GitDirectories.relative=/home/ahmed/Skywriter-git/skywriter-core/.git\:/home/ahmed/Skywriter-git/skywriter-composer/.git\:
+core_autoIgnoreDerivedResources=false
+eclipse.preferences.version=1

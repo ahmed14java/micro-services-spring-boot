@@ -1,0 +1,826 @@
+package com.skywriter.core.service;
+
+import com.skywriter.core.domain.Broadcast;
+import com.skywriter.core.domain.Inbox;
+import com.skywriter.core.repository.BroadcastRepository;
+import com.skywriter.core.repository.ContactRepository;
+import com.skywriter.core.repository.InboxRepository;
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.jsf.FacesContextUtils;
+
+import javax.servlet.ServletContext;
+import java.io.*;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class ExcelWrite {
+
+    public static final Logger LOG = LoggerFactory.getLogger(ExcelWrite.class);
+
+    private boolean isFlag = false;
+
+    @Autowired
+    private InboxRepository inboxRepository;
+
+    @Autowired
+    private ServletContext context;
+
+    @Autowired
+    private ContactRepository contactRepository;
+
+    @Autowired
+    private BroadcastRepository broadcastRepository;
+
+    List<Broadcast> broadcasts = null;
+    List<Broadcast> socialBroadcasts = null;
+
+    private static String[] columns = {"First Name", "Last Name", "Email", "Outreach ID", "Outreach Title",
+        "OutreachSent", "Event", "Eventtimestamp", "likes", "Comments", "Shares"};
+    private static String[] social_columns = {"likes", "Comments", "Shares", "Outreach ID", "Outreach Title",
+        "OutreachSent"};
+
+    public boolean createXls() throws IOException {
+
+        List<Inbox> inboxes = inboxRepository.findAll();
+
+        Workbook workbook = new XSSFWorkbook();
+        CreationHelper createHelper = workbook.getCreationHelper();
+
+        // Create Sheet
+        Sheet sheet = workbook.createSheet("inboxs");
+
+        // Create a Font for styling header cells
+        Font headerFont = workbook.createFont();
+        headerFont.setBoldweight((short) 700);
+        headerFont.setFontHeightInPoints((short) 14);
+        headerFont.setColor(IndexedColors.RED.getIndex());
+
+        // Create a CellStyle with the font
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+
+        // Create a Row
+        Row headerRow = sheet.createRow(0);
+
+        // Create cells
+        for (int i = 0; i < columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
+
+        // Create Other rows and cells with INBOXES data
+        int rowNum = 1;
+        for (Inbox inbox : inboxes) {
+            Row row = sheet.createRow(rowNum++);
+
+            row.createCell(0).setCellValue(inbox.getId());
+
+            row.createCell(1).setCellValue(inbox.getStatus());
+
+            if (inbox.getMailgunDomain() != null) {
+                row.createCell(2).setCellValue(inbox.getMailgunDomain());
+            } else {
+                row.createCell(2).setCellValue("test");
+            }
+            if (inbox.getContactId() != null) {
+                row.createCell(3).setCellValue(inbox.getContactId());
+            } else {
+                row.createCell(3).setCellValue(23);
+            }
+            if (inbox.getBroadcastId() != null) {
+                row.createCell(4).setCellValue(inbox.getBroadcastId());
+            } else {
+                row.createCell(4).setCellValue("null");
+            }
+            if (inbox.getRecipientEmail() != null) {
+                row.createCell(5).setCellValue(inbox.getRecipientEmail());
+            } else {
+                row.createCell(5).setCellValue("null");
+            }
+        }
+        // Resize all columns to fit the content size
+        for (int i = 0; i < columns.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
+        // Write the output to a file
+        FileOutputStream fileOut = new FileOutputStream("exportAll.xls");
+        workbook.write(fileOut);
+        fileOut.flush();
+        fileOut.close();
+        isFlag = true;
+        return isFlag;
+    }
+
+    public ByteArrayInputStream generateXls() throws IOException {
+
+        List<Inbox> inboxes = inboxRepository.findAll();
+
+        Workbook workbook = new XSSFWorkbook();
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        CreationHelper createHelper = workbook.getCreationHelper();
+
+        // Create Sheet
+        Sheet sheet = workbook.createSheet("inboxs");
+
+        // Create a Font for styling header cells
+        Font headerFont = workbook.createFont();
+        headerFont.setBoldweight((short) 700);
+        headerFont.setFontHeightInPoints((short) 14);
+        headerFont.setColor(IndexedColors.RED.getIndex());
+
+        // Create a CellStyle with the font
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+
+        // Create a Row
+        Row headerRow = sheet.createRow(0);
+
+        // Create cells
+        for (int i = 0; i < columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
+
+        // Create Other rows and cells with INBOXES data
+        int rowNum = 1;
+        for (Inbox inbox : inboxes) {
+            Row row = sheet.createRow(rowNum++);
+
+            row.createCell(0).setCellValue(inbox.getId());
+
+            row.createCell(1).setCellValue(inbox.getStatus());
+
+            if (inbox.getMailgunDomain() != null) {
+                row.createCell(2).setCellValue(inbox.getMailgunDomain());
+            } else {
+                row.createCell(2).setCellValue("test");
+            }
+            if (inbox.getContactId() != null) {
+                row.createCell(3).setCellValue(inbox.getContactId());
+            } else {
+                row.createCell(3).setCellValue(23);
+            }
+            row.createCell(4).setCellValue(inbox.getBroadcastId());
+
+            row.createCell(5).setCellValue(inbox.getRecipientEmail());
+        }
+        // Resize all columns to fit the content size
+        for (int i = 0; i < columns.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
+        // Write the output to a file
+        // FileOutputStream fileOut = new FileOutputStream("exportAll.xls");
+        workbook.write(out);
+        return new ByteArrayInputStream(out.toByteArray());
+    }
+
+    // Load Data to Excel File
+    public ByteArrayInputStream loadFile() {
+        try {
+            ByteArrayInputStream in = generateXls();
+            return in;
+        } catch (IOException e) {
+        }
+
+        return null;
+    }
+
+    public boolean socialExportRow(Long id, String title, String domain) throws IOException {
+
+        List<Inbox> inboxes = inboxRepository.findAllByBroadcastIdSocial(id, domain);
+        Workbook workbook = new HSSFWorkbook();
+        CreationHelper createHelper = workbook.getCreationHelper();
+
+        // Create Sheet
+        Sheet sheet = workbook.createSheet("inboxs");
+
+        // Create a Font for styling header cells
+        Font headerFont = workbook.createFont();
+        headerFont.setBoldweight((short) 600);
+        headerFont.setFontHeightInPoints((short) 14);
+        headerFont.setColor(IndexedColors.RED.getIndex());
+
+        // Create a CellStyle with the font
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+
+        // Create Cell Style for formatting Date
+        CellStyle dateCellStyle = workbook.createCellStyle();
+        dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+
+        // Create a Row
+        Row headerRow = sheet.createRow(0);
+
+        // Create cells
+        for (int i = 0; i < social_columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(social_columns[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
+
+        // Create Other rows and cells with INBOXES data
+        int rowNum = 1;
+//        for (Inbox inbox : inboxes) {
+//			Contact contact = contactRepository.findById(inbox.getContactId());
+
+        Broadcast broadcast = broadcastRepository.findById(id);
+        Row row = sheet.createRow(rowNum++);
+
+        try {
+            row.createCell(0).setCellValue(calcLikes(id, inboxes));
+        } catch (Exception e) {
+            row.createCell(0).setCellValue("");
+        }
+        try {
+            row.createCell(1).setCellValue(calcComments(id, inboxes));
+        } catch (Exception e) {
+            row.createCell(1).setCellValue("");
+        }
+        try {
+            row.createCell(2).setCellValue(calcShares(id, inboxes));
+        } catch (Exception e) {
+            row.createCell(2).setCellValue("");
+        }
+        try {
+            row.createCell(3).setCellValue(id);
+        } catch (Exception e) {
+            row.createCell(3).setCellValue("");
+        }
+        try {
+            row.createCell(4).setCellValue(title);
+        } catch (Exception e) {
+            row.createCell(4).setCellValue("");
+        }
+        try {
+            if (broadcast.getPublishondatetime() != null) {
+                row.createCell(5)
+                    .setCellValue(broadcast.getPublishondatetime().format(DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss a")));
+            } else {
+                row.createCell(5).setCellValue("");
+            }
+        } catch (Exception e) {
+            row.createCell(5).setCellValue("");
+        }
+        // Resize all columns to fit the content size
+        for (int i = 0; i < social_columns.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
+//        }
+        // Write the output to a file
+        FileOutputStream fileOut = new FileOutputStream(id + "-" + title + ".xls");
+        workbook.write(fileOut);
+        fileOut.flush();
+        fileOut.close();
+        isFlag = true;
+        return isFlag;
+    }
+
+    public boolean exportRow(Long id, String title) throws IOException {
+        List<Inbox> inboxes = inboxRepository.findAllByBroadcastId(id);
+        Workbook workbook = new HSSFWorkbook();
+        CreationHelper createHelper = workbook.getCreationHelper();
+
+        // Create Sheet
+        Sheet sheet = workbook.createSheet("inboxs");
+
+        // Create a Font for styling header cells
+        Font headerFont = workbook.createFont();
+        headerFont.setBoldweight((short) 600);
+        headerFont.setFontHeightInPoints((short) 14);
+        headerFont.setColor(IndexedColors.RED.getIndex());
+
+        // Create a CellStyle with the font
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+
+        // Create Cell Style for formatting Date
+        CellStyle dateCellStyle = workbook.createCellStyle();
+        dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+
+        // Create a Row
+        Row headerRow = sheet.createRow(0);
+
+        // Create cells
+        for (int i = 0; i < columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
+
+        // Create Other rows and cells with INBOXES data
+        int rowNum = 1;
+        for (Inbox inbox : inboxes) {
+//			Contact contact = contactRepository.findById(inbox.getContactId());
+            Broadcast broadcast = broadcastRepository.findById(inbox.getBroadcastId());
+            Row row = sheet.createRow(rowNum++);
+
+            try {
+                if (inbox.getFirstName() != null) {
+                    row.createCell(0).setCellValue(inbox.getFirstName());
+                } else {
+                    row.createCell(0).setCellValue(" ");
+                }
+            } catch (Exception e) {
+                row.createCell(0).setCellValue(" ");
+            }
+
+            try {
+                if (inbox.getLastName() != null) {
+                    row.createCell(1).setCellValue(inbox.getLastName());
+                } else {
+                    row.createCell(1).setCellValue(" ");
+                }
+            } catch (Exception e) {
+                row.createCell(1).setCellValue(" ");
+            }
+
+            try {
+                if (inbox.getRecipientEmail() != null) {
+                    row.createCell(2).setCellValue(inbox.getRecipientEmail());
+                } else {
+                    row.createCell(2).setCellValue(" ");
+                }
+            } catch (Exception e) {
+                row.createCell(2).setCellValue(" ");
+            }
+            try {
+                if (inbox.getBroadcastId() != null) {
+                    row.createCell(3).setCellValue(inbox.getBroadcastId());
+                } else {
+                    row.createCell(3).setCellValue(" ");
+                }
+            } catch (Exception e) {
+                row.createCell(3).setCellValue(" ");
+            }
+            try {
+                if (broadcast.getTitle() != null) {
+                    row.createCell(4).setCellValue(broadcast.getTitle().replace(" ", "-"));
+                } else {
+                    row.createCell(4).setCellValue(" ");
+                }
+            } catch (Exception e) {
+                row.createCell(4).setCellValue(" ");
+            }
+            try {
+                if (broadcast.getPublishondatetime() != null) {
+                    // Cell dateOfBirthCell = row.createCell(5);
+                    // dateOfBirthCell.setCellValue(broadcast.getPublishondatetime().toString());
+                    // dateOfBirthCell.setCellStyle(dateCellStyle);
+                    row.createCell(5)
+                        .setCellValue(broadcast.getPublishondatetime().format(DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss a")));
+//                                .getDayOfMonth() + "-"
+//									+ broadcast.getPublishondatetime().getMonthValue() + "-"
+//									+ broadcast.getPublishondatetime().getYear());
+                } else {
+                    row.createCell(5).setCellValue("");
+                }
+            } catch (Exception e) {
+                row.createCell(5).setCellValue("");
+            }
+            try {
+                if (inbox.getStatus() != null) {
+                    row.createCell(6).setCellValue(inbox.getStatus());
+                } else {
+                    row.createCell(6).setCellValue("");
+                }
+            } catch (Exception e) {
+                row.createCell(6).setCellValue("");
+            }
+            try {
+                if (inbox.getEventTimestamp() != null) {
+                    // Cell dateOfBirthCell = row.createCell(7);
+                    // dateOfBirthCell.setCellValue(inbox.getEventTimestamp().toString());
+                    // dateOfBirthCell.setCellStyle(dateCellStyle);
+                    row.createCell(7).setCellValue(inbox.getEventTimestamp().format(DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss a")));
+//                        .getDayOfMonth() + "-"
+//							+ inbox.getEventTimestamp().getMonthValue() + "-" + inbox.getEventTimestamp().getYear());
+                } else {
+                    row.createCell(7).setCellValue("");
+                }
+
+            } catch (Exception e) {
+                row.createCell(7).setCellValue("");
+            }
+
+        }
+        // Resize all columns to fit the content size
+        for (int i = 0; i < columns.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
+        // Write the output to a file
+        FileOutputStream fileOut = new FileOutputStream(id + "-" + title + ".xls");
+        workbook.write(fileOut);
+        fileOut.flush();
+        fileOut.close();
+        isFlag = true;
+        return isFlag;
+    }
+
+    public boolean exportAllSocial(List<Broadcast> broadcasts) throws IOException {
+        List<Inbox> inboxes = new ArrayList<>();
+        Workbook workbook = null;
+        workbook = new HSSFWorkbook();
+        CreationHelper createHelper = workbook.getCreationHelper();
+
+        // Create Sheet
+        Sheet sheet = workbook.createSheet("inboxs");
+
+        // Create a Font for styling header cells
+        Font headerFont = workbook.createFont();
+        headerFont.setBoldweight((short) 600);
+        headerFont.setFontHeightInPoints((short) 14);
+        headerFont.setColor(IndexedColors.RED.getIndex());
+
+        // Create a CellStyle with the font
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+
+        // Create Cell Style for formatting Date
+        CellStyle dateCellStyle = workbook.createCellStyle();
+        dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+
+        // Create a Row
+        Row headerRow = sheet.createRow(0);
+
+        // Create cells
+        for (int i = 0; i < social_columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(social_columns[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
+        int rowNum = 1;
+        Row row = null;
+
+        for (Broadcast broadcast : broadcasts) {
+            LOG.info("------------------------------------> "  + broadcast.getTitle() + broadcast.getDomain() + broadcast.getId());
+            inboxes.addAll(inboxRepository.findAllByBroadcastIdSocial(broadcast.getId(), broadcast.getDomain()));
+            LOG.info("------------------------------------> size before clear"  + inboxes.size());
+            // Create Other rows and cells with INBOXES data
+
+//        for (Inbox inbox : inboxes) {
+//			Contact contact = contactRepository.findById(inbox.getContactId());
+
+            row = sheet.createRow(rowNum++);
+
+            try {
+                row.createCell(0).setCellValue(calcLikes(broadcast.getId(), inboxes));
+            } catch (Exception e) {
+                row.createCell(0).setCellValue("");
+            }
+            try {
+                row.createCell(1).setCellValue(calcComments(broadcast.getId(), inboxes));
+            } catch (Exception e) {
+                row.createCell(1).setCellValue("");
+            }
+            try {
+                row.createCell(2).setCellValue(calcShares(broadcast.getId(), inboxes));
+            } catch (Exception e) {
+                row.createCell(2).setCellValue("");
+            }
+            try {
+                row.createCell(3).setCellValue(broadcast.getId());
+            } catch (Exception e) {
+                row.createCell(3).setCellValue("");
+            }
+            try {
+                if (broadcast.getTitle() != null) {
+                    row.createCell(4).setCellValue(broadcast.getTitle());
+                }else {
+                    row.createCell(4).setCellValue("");
+                }
+            } catch (Exception e) {
+                row.createCell(4).setCellValue("");
+            }
+            try {
+                if (broadcast.getPublishondatetime() != null) {
+                    row.createCell(5)
+                        .setCellValue(broadcast.getPublishondatetime().format(DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss a")));
+                } else {
+                    row.createCell(5).setCellValue("");
+                }
+            } catch (Exception e) {
+                row.createCell(5).setCellValue("");
+            }
+            // Resize all columns to fit the content size
+            for (int i = 0; i < social_columns.length; i++) {
+                sheet.autoSizeColumn(i);
+            }
+//        }
+            inboxes.clear();
+            LOG.info("------------------------------------> size before after"  + inboxes.size());
+        }
+        // Write the output to a file
+        FileOutputStream fileOut = new FileOutputStream("Social-MyOutreach.xls");
+        workbook.write(fileOut);
+        fileOut.flush();
+        fileOut.close();
+        isFlag = true;
+        return isFlag;
+    }
+
+    public boolean exportAll(List<Broadcast> broadcasts) throws IOException {
+    	
+        List<Inbox> inboxes = new ArrayList<>();
+        broadcasts.stream().forEach(broadcast -> {
+            inboxes.addAll(inboxRepository.findAllByBroadcastId(broadcast.getId()));
+        });
+        Workbook workbook = new HSSFWorkbook();
+        CreationHelper createHelper = workbook.getCreationHelper();
+
+        // Create Sheet
+        Sheet sheet = workbook.createSheet("inboxs");
+
+        // Create a Font for styling header cells
+        Font headerFont = workbook.createFont();
+        headerFont.setBoldweight((short) 600);
+        headerFont.setFontHeightInPoints((short) 14);
+        headerFont.setColor(IndexedColors.RED.getIndex());
+
+        // Create a CellStyle with the font
+        CellStyle headerCellStyle = workbook.createCellStyle();
+        headerCellStyle.setFont(headerFont);
+
+        // Create Cell Style for formatting Date
+        CellStyle dateCellStyle = workbook.createCellStyle();
+        dateCellStyle.setDataFormat(createHelper.createDataFormat().getFormat("dd-MM-yyyy"));
+
+        // Create a Row
+        Row headerRow = sheet.createRow(0);
+
+        // Create cells
+        for (int i = 0; i < columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+            cell.setCellStyle(headerCellStyle);
+        }
+
+        // Create Other rows and cells with INBOXES data
+        int rowNum = 1;
+        Row row = null;
+        for (Inbox inbox : inboxes) {
+            // if (!inbox.getStatus().equalsIgnoreCase("OPENED") ||
+            // !inbox.getStatus().equalsIgnoreCase("DELIVERED") ||
+            // !inbox.getStatus().equalsIgnoreCase("CLICKED")){
+            // continue;
+            // }
+//			Contact contact = contactRepository.findById(inbox.getContactId());
+            Broadcast broadcast = broadcastRepository.findById(inbox.getBroadcastId());
+            row = sheet.createRow(rowNum++);
+
+            try {
+                if (inbox.getFirstName() != null) {
+                    row.createCell(0).setCellValue(inbox.getFirstName());
+                } else {
+                    row.createCell(0).setCellValue(" ");
+                }
+            } catch (Exception e) {
+                row.createCell(0).setCellValue(" ");
+            }
+
+            try {
+                if (inbox.getLastName() != null) {
+                    row.createCell(1).setCellValue(inbox.getLastName());
+                } else {
+                    row.createCell(1).setCellValue(" ");
+                }
+            } catch (Exception e) {
+                row.createCell(1).setCellValue(" ");
+            }
+
+            try {
+                if (inbox.getRecipientEmail() != null) {
+                    row.createCell(2).setCellValue(inbox.getRecipientEmail());
+                } else {
+                    row.createCell(2).setCellValue(" ");
+                }
+            } catch (Exception e) {
+                row.createCell(2).setCellValue(" ");
+            }
+            try {
+                if (inbox.getBroadcastId() != null) {
+                    row.createCell(3).setCellValue(inbox.getBroadcastId());
+                } else {
+                    row.createCell(3).setCellValue(" ");
+                }
+            } catch (Exception e) {
+                row.createCell(3).setCellValue(" ");
+            }
+            try {
+                if (broadcast.getTitle() != null) {
+                    row.createCell(4).setCellValue(broadcast.getTitle().replace(" ", "-"));
+                } else {
+                    row.createCell(4).setCellValue(" ");
+                }
+            } catch (Exception e) {
+                row.createCell(4).setCellValue(" ");
+            }
+            try {
+                if (broadcast.getPublishondatetime() != null) {
+                    // Cell dateOfBirthCell = row.createCell(5);
+                    // dateOfBirthCell.setCellValue(broadcast.getPublishondatetime().toString());
+                    // dateOfBirthCell.setCellStyle(dateCellStyle);
+                    row.createCell(5)
+                        .setCellValue(broadcast.getPublishondatetime().format(DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss a")));
+//					.getDayOfMonth() + "-"
+//                        + broadcast.getPublishondatetime().getMonthValue() + "-"
+//                        + broadcast.getPublishondatetime().getYear()
+                } else {
+                    row.createCell(5).setCellValue(" ");
+                }
+            } catch (Exception e) {
+                row.createCell(5).setCellValue(" ");
+            }
+            try {
+                if (inbox.getStatus() != null) {
+                    row.createCell(6).setCellValue(inbox.getStatus());
+                } else {
+                    row.createCell(6).setCellValue(" ");
+                }
+            } catch (Exception e) {
+                row.createCell(6).setCellValue(" ");
+            }
+            try {
+                if (inbox.getEventTimestamp() != null) {
+//					Cell dateOfBirthCell = row.createCell(7);
+//					dateOfBirthCell.setCellValue(inbox.getEventTimestamp().toString());
+//					dateOfBirthCell.setCellStyle(dateCellStyle);
+                    row.createCell(7).setCellValue(inbox.getEventTimestamp().format(DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss a")));
+//                        .getDayOfMonth() + "-"
+//							+ inbox.getEventTimestamp().getMonthValue() + "-" + inbox.getEventTimestamp().getYear());
+                } else {
+                    row.createCell(7).setCellValue(" ");
+                }
+            } catch (Exception e) {
+                row.createCell(7).setCellValue(" ");
+            }
+            try {
+                row.createCell(8).setCellValue(" ");
+            } catch (Exception e) {
+                row.createCell(8).setCellValue(" ");
+            }
+            try {
+                row.createCell(9).setCellValue(" ");
+            } catch (Exception e) {
+                row.createCell(9).setCellValue(" ");
+            }
+            try {
+                row.createCell(10).setCellValue(" ");
+            } catch (Exception e) {
+                row.createCell(10).setCellValue(" ");
+            }
+        }
+        List<Inbox> socialInboxes = new ArrayList<>();
+        for (Broadcast broadcast : broadcasts) {
+        	socialInboxes.addAll(inboxRepository.findAllByBroadcastIdSocial(broadcast.getId(), broadcast.getDomain()));
+//        for (Inbox inbox : inboxes) {
+//			Contact contact = contactRepository.findById(inbox.getContactId());
+
+            row = sheet.createRow(rowNum++);
+
+            try {
+                row.createCell(8).setCellValue(calcLikes(broadcast.getId(), socialInboxes));
+            } catch (Exception e) {
+                row.createCell(8).setCellValue("");
+            }
+            try {
+                row.createCell(9).setCellValue(calcComments(broadcast.getId(), socialInboxes));
+            } catch (Exception e) {
+                row.createCell(9).setCellValue("");
+            }
+            try {
+                row.createCell(10).setCellValue(calcShares(broadcast.getId(), socialInboxes));
+            } catch (Exception e) {
+                row.createCell(10).setCellValue("");
+            }
+            try {
+                row.createCell(3).setCellValue(broadcast.getId());
+            } catch (Exception e) {
+                row.createCell(3).setCellValue("");
+            }
+            try {
+                if (broadcast.getTitle() != null) {
+                    row.createCell(4).setCellValue(broadcast.getTitle());
+                }else {
+                    row.createCell(4).setCellValue("");
+                }
+            } catch (Exception e) {
+                row.createCell(4).setCellValue("");
+            }
+            try {
+                if (broadcast.getPublishondatetime() != null) {
+                    row.createCell(5)
+                        .setCellValue(broadcast.getPublishondatetime().format(DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss a")));
+                } else {
+                    row.createCell(5).setCellValue("");
+                }
+            } catch (Exception e) {
+                row.createCell(5).setCellValue("");
+            }
+//        }
+            socialInboxes.clear();
+        }
+        
+        // Resize all columns to fit the content size
+        for (int i = 0; i < columns.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
+        // Write the output to a file
+        FileOutputStream fileOut = new FileOutputStream("MyOutreach.xls");
+        workbook.write(fileOut);
+        fileOut.flush();
+        fileOut.close();
+        isFlag = true;
+        return isFlag;
+    }
+
+    public void saveData(List<Broadcast> broadcastsTemp) {
+        broadcasts = new ArrayList<>();
+        broadcasts = broadcastsTemp;
+    }
+
+    public void saveSocialData(List<Broadcast> broadcastsTemp) {
+        socialBroadcasts = new ArrayList<>();
+        socialBroadcasts = broadcastsTemp;
+    }
+
+    public List<Broadcast> retrieveData() {
+        return broadcasts;
+    }
+
+    public List<Broadcast> retrieveSocialData() {
+        return socialBroadcasts;
+    }
+
+    private int calcShares(Long broadcastId, List<Inbox> inbox) {
+        int Share = 0;
+        try {
+            List<Long> counts = inbox.stream()
+                .filter(b -> b.getBroadcastId().equals(broadcastId) && b.getStatus().equalsIgnoreCase("Share"))
+                .map(val -> {
+                    return val.getCount();
+                }).collect(Collectors.toList());
+
+            for (Long in : counts) {
+                Share += in;
+            }
+            return Share;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    private int calcLikes(Long broadcastId, List<Inbox> inbox) {
+        int likes = 0;
+        try {
+            List<Long> counts = inbox.stream()
+                .filter(b -> b.getBroadcastId().equals(broadcastId) && b.getStatus().equalsIgnoreCase("Like"))
+                .map(val -> {
+                    return val.getCount();
+                }).collect(Collectors.toList());
+
+            for (Long in : counts) {
+                likes += in;
+            }
+            return likes;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    private int calcComments(Long broadcastId, List<Inbox> inbox) {
+
+        try {
+            int comments = 0;
+            List<Long> counts = inbox.stream()
+                .filter(b -> b.getBroadcastId().equals(broadcastId) && b.getStatus().equalsIgnoreCase("Comment"))
+                .map(val -> {
+                    return val.getCount();
+                }).collect(Collectors.toList());
+
+            for (Long in : counts) {
+                comments += in;
+            }
+
+            return comments;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+
+    }
+}

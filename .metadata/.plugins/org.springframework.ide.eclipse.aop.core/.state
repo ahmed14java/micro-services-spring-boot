@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="PhotoAppDiscoveryService"/>
+<aop-project name="PhotAppZullApiGateway"/>
+<aop-project name="PhotoAppApiConfigServer"/>
+<aop-project name="PhotoAppAccountManagement"/>
+<aop-project name="PhotoAppApiUsers"/>
+</aop-reference-model>
